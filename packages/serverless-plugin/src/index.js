@@ -129,8 +129,8 @@ export default class ServerlessChrome {
       const handlerCodePath = path.join(config.servicePath, filePath)
 
       const originalFileRenamed = `${utils.generateShortId()}___${fileName}`
-
-      const customPluginOptions = service.custom.chrome || {}
+      
+      const customPluginOptions = (service.custom && service.custom.chrome) || {}
 
       const launcherOptions = {
         ...customPluginOptions,
